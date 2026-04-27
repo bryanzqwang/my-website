@@ -11,6 +11,8 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+
+/* Post 1: Getting Started with Next.js */
   {
     id: "1",
     slug: "getting-started-with-nextjs",
@@ -60,10 +62,13 @@ The \`app/\` directory is where your pages and routes live. Each folder with a \
 
 Now you're ready to start building. Explore the Next.js documentation and start creating amazing applications!`,
     date: "2026-03-15",
-    author: "Your Name",
+    author: "Bryan Wang",
     readTime: 5,
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop&crop=center",
   },
+
+
+/* Post 2: Tailwind CSS Tips & Tricks*/
   {
     id: "2",
     slug: "tailwind-css-tips",
@@ -120,6 +125,9 @@ Master these tips to become a Tailwind CSS pro!`,
     image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=400&fit=crop&crop=center",
     readTime: 4,
   },
+
+
+
   {
     id: "3",
     slug: "typescript-best-practices",

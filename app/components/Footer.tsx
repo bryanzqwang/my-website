@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="w-full mt-16" style={{ backgroundColor: '#053727' }}>
+    <footer className="w-full mt-16" style={{ backgroundColor: '#182E6F' }}>
       <div className="mx-auto max-w-6xl px-6 py-40 sm:px-10">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           {/* Left side - Newsletter signup */}
@@ -30,7 +30,7 @@ export function Footer() {
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1e7559] transition hover:bg-white/90"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#182E6F] transition hover:bg-white/90"
               >
                 Subscribe →
               </button>

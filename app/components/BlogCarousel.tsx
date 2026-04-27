@@ -5,6 +5,7 @@ import Image from "next/image";
 import { BlogPost, getAllBlogPosts } from "@/app/data/blog-posts";
 import { formatDateShort } from "@/app/utils/date";
 import Link from "next/link";
+import { PillButton } from "@/app/components/PillButton";
 
 export function BlogCarousel() {
   const posts = getAllBlogPosts();
@@ -34,7 +35,7 @@ export function BlogCarousel() {
   };
 
   return (
-    <div className="grid gap-12 md:gap-20 lg:grid-cols-2 lg:items-center">
+    <div className="grid gap-12 md:gap-20 lg:grid-cols-2 lg:items-center lg:px-16">
       {/* Left side - text description */}
       <div className="space-y-4">
         <h2 className="text-4xl font-bold tracking-tight text-zinc-950 dark:text-white">
@@ -42,24 +43,16 @@ export function BlogCarousel() {
         </h2>
         <div className="space-y-4 text-base leading-8 text-zinc-600 dark:text-zinc-400">
           <p>
-            I write about web development, modern React patterns, TypeScript best practices, and the tools and techniques that help me build better applications.
+            I write about the biggest problems in healthcare and the technological solutions being built to solve them. 
           </p>
           <p>
-            Whether it's exploring new frameworks, sharing lessons learned, or diving deep into technical concepts, my goal is to help developers like you stay informed and inspired.
+            My approach isn't singularly through research and data, or stories and drama, but compiles these factors into a statistically-satisfying, narrative whole. 
           </p>
           <p>
-            Explore my latest thoughts and join the discussion on topics that matter in today's web development landscape.
+            Explore my latest thoughts and join the discussion on topics that matter.
           </p>
         </div>
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:scale-[1.02]"
-          style={{ backgroundColor: "#1e7559" }}
-          onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#2da27c")}
-          onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#1e7559")}
-        >
-          View All Blog Posts →
-        </Link>
+        <PillButton href="/blog" label="View All Blog Posts →" />
       </div>
 
       {/* Right side - carousel */}

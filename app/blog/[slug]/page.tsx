@@ -2,11 +2,13 @@ import Link from "next/link";
 import { getBlogPost, getAllBlogPosts } from "@/app/data/blog-posts";
 import { formatDate } from "@/app/utils/date";
 import { notFound } from "next/navigation";
+import { PageHeader } from "@/app/components/PageHeader";
+import { Footer } from "@/app/components/Footer";
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export function generateStaticParams() {
@@ -16,8 +18,9 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: BlogPostPageProps) {
-  const post = getBlogPost(params.slug);
+export async function generateMetadata({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
 
   if (!post) {
     return {
@@ -31,8 +34,9 @@ export function generateMetadata({ params }: BlogPostPageProps) {
   };
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPost(params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
 
   if (!post) {
     notFound();
@@ -40,6 +44,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black">
+      <PageHeader title={post.title} />
       <main className="mx-auto max-w-3xl px-6 py-16 sm:px-10">
         <Link
           href="/blog"
@@ -51,11 +56,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
         <article>
           <header className="mb-8 border-b border-zinc-200/50 pb-8 dark:border-zinc-800/50">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-950 dark:text-white sm:text-5xl">
-              {post.title}
-            </h1>
-
-            <div className="mt-6 flex flex-wrap items-center gap-4 text-sm">
+            <div className="flex flex-wrap items-center gap-4 text-sm">
               <time className="text-zinc-600 dark:text-zinc-400">
                 {formatDate(post.date)}
               </time>
@@ -73,7 +74,6 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="prose dark:prose-invert max-w-none">
             <div className="whitespace-pre-wrap text-zinc-700 dark:text-zinc-300 leading-relaxed">
               {post.content.split("\n").map((line, index) => {
-                // Handle markdown-like formatting
                 if (line.startsWith("# ")) {
                   return (
                     <h2
@@ -114,6 +114,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </article>
       </main>
+      <Footer />
     </div>
   );
 }

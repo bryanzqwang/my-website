@@ -1,5 +1,6 @@
 import { getAllBlogPosts } from "@/app/data/blog-posts";
 import { BlogPostCard } from "@/app/components/BlogPostCard";
+import { PageHeader } from "@/app/components/PageHeader";
 import { Footer } from "@/app/components/Footer";
 
 export default function Blog() {
@@ -7,16 +8,8 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black">
+      <PageHeader title="Blog" subtitle="Thoughts on web development, design, and technology." />
       <main className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
-        <div className="mb-16">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-950 dark:text-white sm:text-5xl">
-            Blog
-          </h1>
-          <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
-            Thoughts on web development, design, and technology.
-          </p>
-        </div>
-
         {posts.length > 0 ? (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (

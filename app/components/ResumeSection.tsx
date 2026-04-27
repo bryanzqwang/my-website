@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { PillButton } from "./PillButton";
 
 export function ResumeSection() {
   return (
@@ -35,17 +36,7 @@ export function ResumeSection() {
             Outside of work, I'm always exploring new ideas, tinkering with side projects, and looking for ways to keep growing as an engineer and a person.
           </p>
         </div>
-        <Link
-          href="https://www.linkedin.com/in/YOUR_HANDLE"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:scale-[1.02]"
-          style={{ backgroundColor: "#1e7559" }}
-          onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#2da27c")}
-          onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#1e7559")}
-        >
-          Let's Connect →
-        </Link>
+        <PillButton href="https://www.linkedin.com/in/bryan-wang-644849158/" label="Let's Connect →" />
       </div>
     </div>
   );
