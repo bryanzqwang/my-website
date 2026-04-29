@@ -39,7 +39,7 @@ export function Footer() {
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-white/90">
-                  Email *
+                  Email*
                 </label>
                 <input
                   type="email"
