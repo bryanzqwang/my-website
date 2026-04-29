@@ -22,6 +22,8 @@ export async function POST(req: NextRequest) {
   });
 
   if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    console.error("Resend error:", res.status, body);
     return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
   }
 
