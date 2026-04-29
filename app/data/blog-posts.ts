@@ -127,6 +127,8 @@ Master these tips to become a Tailwind CSS pro!`,
   },
 
 
+/* Post 3: TypeScript Best Practices*/
+
 
   {
     id: "3",

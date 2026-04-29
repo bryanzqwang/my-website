@@ -25,10 +25,10 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
         <div className="p-6">
           <div className="flex flex-col gap-3">
             <div>
-              <h3 className="text-lg font-semibold text-zinc-950 group-hover:text-zinc-700 dark:text-white dark:group-hover:text-zinc-300 transition">
+              <h3 className="text-lg font-semibold text-zinc-950 group-hover:text-zinc-700 dark:text-white dark:group-hover:text-zinc-300 transition line-clamp-1 min-h-[1.75rem]">
                 {post.title}
               </h3>
-              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2 min-h-[2.5rem]">
                 {post.excerpt}
               </p>
             </div>
