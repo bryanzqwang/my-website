@@ -9,7 +9,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black">
       <PageHeader title="Blog" subtitle="Thoughts on web development, design, and technology." />
-      <main className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
+      <main className="mx-auto max-w-6xl px-6 py-24 sm:px-2">
         {posts.length > 0 ? (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (

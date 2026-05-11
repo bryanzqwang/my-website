@@ -58,9 +58,9 @@ export default function Home() {
             aria-hidden="true"
             className="pointer-events-none absolute bottom-0 right-0 w-[55%] z-0"
           />
-          <div className="relative z-10 grid grid-cols-[1fr_1fr] items-end px-12 pt-10 lg:px-24 lg:pt-6">
+          <div className="relative z-10 grid grid-cols-[1fr_1fr] items-end px-12 pt-4 lg:px-24 lg:pt-8">
             {/* Left: text */}
-            <div className="pb-10 lg:pb-12">
+            <div className="pb-10 lg:pb-14">
               <h1 className="text-[5rem] font-bold text-white leading-tight tracking-tight lg:text-[6rem]">
                 hey y'all, <br/> I'm <CircleHighlight>Bryan!</CircleHighlight>
               </h1>
@@ -74,14 +74,15 @@ export default function Home() {
                 Read more →
               </a>
             </div>
-            {/* Right: profile photo flush with bottom */}
-            <div className="relative h-[480px] lg:h-[530px]">
+            {/* Right: profile photo */}
+            <div className="flex items-center justify-center h-[480px] lg:h-[520px]">
               <Image
-                src="/profile_unblemished_3.png"
+                src="/Profile.png"
                 alt="Bryan"
-                fill
-                className="object-contain object-bottom"
-                sizes="(max-width: 1024px) 50vw, 600px"
+                width={400}
+                height={400}
+                className="object-contain max-w-[400px] max-h-[400px] -translate-y-8"
+                sizes="(max-width: 1024px) 50vw, 400px"
                 priority
               />
             </div>
@@ -92,8 +93,8 @@ export default function Home() {
       <main className="mx-6 sm:mx-10 lg:mx-auto lg:max-w-[1400px] lg:px-10">
         {/* Blog showcase section */}
         {posts.length > 0 && (
-          <section className="mt-8 px-2 py-10 sm:px-4 sm:py-14">
-            <div className="grid gap-12 md:gap-20 lg:grid-cols-2 lg:items-center lg:px-16">
+          <section className="mt-8 py-10 px-12 sm:py-14 lg:px-24">
+            <div className="grid gap-12 md:gap-20 lg:grid-cols-2 lg:items-center">
               {/* Left side - text description */}
               <div className="space-y-4">
                 <h2 className="text-4xl font-bold tracking-tight text-[#305CDE]">
@@ -179,8 +180,8 @@ export default function Home() {
         )}
 
         {/* Resume / career section */}
-        <section className="mt-0 px-2 py-10 sm:px-4 sm:py-14">
-          <div className="grid gap-12 md:gap-20 lg:grid-cols-2 lg:items-center lg:px-16">
+        <section className="mt-0 py-10 px-12 sm:py-14 lg:px-24">
+          <div className="grid gap-12 md:gap-20 lg:grid-cols-2 lg:items-center">
             {/* Left side - resume image */}
             <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/80 shadow-lg shadow-zinc-200/60 backdrop-blur-xl dark:border-zinc-800/80 dark:bg-zinc-900/70 dark:shadow-zinc-950/40">
               <div className="aspect-[4/3] relative">

@@ -44,8 +44,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black">
-      <PageHeader title={post.title} />
-      <main className="mx-auto max-w-3xl px-6 py-16 sm:px-10">
+      <PageHeader title={post.title} subtitle="Test"/>
+      <main className="mx-auto max-w-5xl py-16">
         <Link
           href="/blog"
           className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition"

@@ -22,7 +22,7 @@ export function PageHeader({ title, subtitle }: PageHeaderProps) {
         <div className="px-14 pt-7 pb-10 lg:px-24 lg:pt-8 lg:pb-12">
           <h1 className="text-5xl font-bold text-white tracking-tight lg:text-6xl">{title}</h1>
           {subtitle && (
-            <p className="mt-4 text-xl text-white/75">{subtitle}</p>
+            <p className="mt-8 text-xl text-white/75">{subtitle}</p>
           )}
         </div>
       </div>

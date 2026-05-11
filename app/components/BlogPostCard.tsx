@@ -22,8 +22,8 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
             />
           </div>
         )}
-        <div className="p-6">
-          <div className="flex flex-col gap-3">
+        <div className="p-4">
+          <div className="flex flex-col gap-2">
             <div>
               <h3 className="text-lg font-semibold text-zinc-950 group-hover:text-zinc-700 dark:text-white dark:group-hover:text-zinc-300 transition line-clamp-1 min-h-[1.75rem]">
                 {post.title}
