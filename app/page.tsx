@@ -58,7 +58,7 @@ export default function Home() {
             aria-hidden="true"
             className="pointer-events-none absolute bottom-0 right-0 w-[55%] z-0"
           />
-          <div className="relative z-10 grid grid-cols-[1fr_1fr] items-end px-12 pt-4 lg:px-24 lg:pt-8">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_1fr] items-end px-12 lg:px-24">
             {/* Left: text */}
             <div className="pb-10 lg:pb-14">
               <h1 className="text-[5rem] font-bold text-white leading-tight tracking-tight lg:text-[6rem]">
@@ -75,14 +75,13 @@ export default function Home() {
               </a>
             </div>
             {/* Right: profile photo */}
-            <div className="flex items-center justify-center h-[480px] lg:h-[520px]">
+            <div className="hidden lg:block relative h-[550px] -translate-x-12">
               <Image
-                src="/Profile.png"
+                src="/Profile_2.png"
                 alt="Bryan"
-                width={400}
-                height={400}
-                className="object-contain max-w-[400px] max-h-[400px] -translate-y-8"
-                sizes="(max-width: 1024px) 50vw, 400px"
+                fill
+                className="object-contain object-bottom"
+                sizes="(max-width: 1024px) 50vw, 600px"
                 priority
               />
             </div>
